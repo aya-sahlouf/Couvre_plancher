@@ -1,5 +1,7 @@
-@model IEnumerable<CouvreplancherModel>
-    
+
+@{
+  var couvre = ViewBag.couvre as List<CouvreplancherModel>;
+}
 <div class=" p-5 container-fluid  text-center shadow-lg text-white" style=
 "background-image: url('images/home.jpg');background-size: cover;
     height: 70vh;">
@@ -24,7 +26,7 @@
                                                     <div class="card-block">
                                                         <div class="row" id="sortable">
                                                             
-                                                            @foreach (var item in Model)
+                                                            @foreach (var item in couvre)
                                                             { <div class="col-md-4 m-b-20" draggable="false" style="">
                                                                 
                                                                 <div class="card-sub">
@@ -56,73 +58,3 @@
         </div>
 
 </div>
-<div class="container text-center mt-5 my-4">
-    <h1 class="font-weight-light pb-3 col-t">Passer votre commande</h1>
-
-<!--For all screen-->
-<div class="page">
-
-
-  <!--Login & Signup in single row-->
-  <div class="row">
-  
-    
-  <!--Column for signin-->
-    <div class="col-sm-8 text-center signin">
-  
-  
-      <!-- Default form login -->
-      @using (Html.BeginForm("Index", "Client", FormMethod.Get)){
-    <p class="h4 mb-4 text-center signintext top"><strong>Sign in to this Website</strong></p>
-  
-       
-  <select class="form-select form-control mb-2" name="Couvre">
-@foreach (var item in Model)
-{ <option value="@item.Id_couvre">@item.Nom</option>
-}
-   
-
-</select>
-  <div class="input-group" style="width: 80%;">
-     
-    <input type="number" class="form-control " name="lar" placeholder="Largeur">
-  <input type="number" class="form-control" name="Long" placeholder="Langueur" >
-       
-  </div>
-     
-     
-             
-        <button class="btn btn-info btn-block LoginBtn" name="ADemander" value="1" type="submit" >SIGN IN</button>
-  
-  
-  }
-  
-    </div>
-  
-  <!--Column for signin-->
-    <div class="col-sm-4 signup text-center">
-      <h2 class="HelloFriend">Hello, Friend! </h2>
-      <h4 class="SignupText">Enter your personal details<br>and start journey with us</h4>
-
-  
-    </div>
-  </div>
-  </div>
-</div>
-
-@* @if(@Model.ADemander==1) {
-    <div class="ms-5 me-5 shadow p-3 mb-5 bg-white rounded">
-       
-        <hr />
-        <p> <b>Langueur: </b> @Model.Longueur pi <b>Largeur: </b> @Model.Largeur pi <b>superficie: @Model.Superficie </b> pi²</p>
-        <p><b>Type de couvre de plancher: @Model.Name</b> </p>
-        <h3>Facture: </h3>
-        <p><b>Coût des matériaux:</b> @Model.HTMateriaux </p>
-        <p><b>Coût de la main d'ouevre:</b> @Model.HTMainOeuvre</p>
-        <p><b>Le total Hors taxe: </b> @Model.Totalht </p>
-        <p><b>Taxe sur coût des matériaux: </b> @Model.TaxeMateriaux</p>
-        <p><b>Taxe sur coût de la main d'ouevre: </b> @Model.TaxeMainOeuvre </p>
-        <h3 class="ms-5 me-5 shadow p-3 mb-5 bg-white rounded"><b>Le total taxes inclus: </b> @Model.Totalttc DH</h3>
-    </div>
-
-} *@

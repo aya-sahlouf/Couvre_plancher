@@ -1,0 +1,82 @@
+@{
+ var fact = ViewBag.data as List<CouvreplancherModel>;
+ double lar = Convert.ToDouble(Context.Session.GetInt32("lar"));
+ double Long =Convert.ToDouble(Context.Session.GetInt32("long")) ;
+}
+
+@model List<CouvreplancherModel>;
+<div class="container text-center mt-5 my-4">
+
+
+<!--For all screen-->
+<div class="page">
+
+
+  <!--Login & Signup in single row-->
+  <div class="row">
+  
+    
+  <!--Column for signin-->
+    <div class="col-sm-8 text-center signin">
+  
+  
+      <!-- Default form login -->
+      @using (Html.BeginForm("Commande", "Client", FormMethod.Get)){
+    <p class="h4 mb-4 text-center signintext top"><strong>Passer votre commande</strong></p>
+  
+       
+  <select class="form-select form-control mb-2" name="idcouvre">
+@foreach (var item in Model)
+{ <option value="@item.Id_couvre">@item.Nom</option>
+}
+   
+
+</select>
+  <div class="input-group" style="width: 80%;">
+     
+    <input type="number" class="form-control " name="lar" placeholder="Largeur">
+  <input type="number" class="form-control" name="Long" placeholder="Langueur" >
+       
+  </div>
+     
+     
+             
+        <button class="btn btn-info btn-block LoginBtn" name="ADemander"  value="1" type="submit" >Commander</button>
+  
+  
+  }
+  
+    </div>
+  
+  <!--Column for signin-->
+    <div class="col-sm-4 signup text-center">
+      <h2 class="HelloFriend">Hello, Friend! </h2>
+      <h4 class="SignupText">Enter your personal details<br>and start journey with us</h4>
+
+  
+    </div>
+  </div>
+  </div>
+</div>
+@if (@Context.Session.GetInt32("ademmander")==1)
+{
+ @foreach (var item in fact)
+{
+  <div class="ms-5 me-5 shadow p-3 mb-5 bg-white rounded">
+        <h3>Bonjour </h3>
+        <p>Informations de votre demande:</p>
+        <hr />
+        <p> <b>Langueur: @lar </b> pi <b>Largeur: @Long  </b>  pi <b>superficie: @item.CalculSuperficie(Long,lar) </b> pi²</p>
+        <p><b>Type de couvre de plancher: @item.Nom</b> </p>
+        <h3>Facture: </h3>
+        <p><b>Coût des matériaux:</b> @item.CalculHTMateriaux(Long,lar)</p>
+        <p><b>Coût de la main d'ouevre:</b> @item.CalculHTMainOeuvre(Long,lar)</p>
+        <p><b>Le total Hors taxe: </b> @item.CalculTotalHT(Long,lar)</p>
+        <p><b>Taxe sur coût des matériaux: </b> @item.CalculTaxeMateriaux(Long,lar)</p>
+        <p><b>Taxe sur coût de la main d'ouevre: </b> @item.CalculTaxeMainOeuvre(Long,lar) </p>
+        <h3 class="ms-5 me-5 shadow p-3 mb-5 bg-white rounded"><b>Le total taxes inclus: </b> @item.CalculTotalTTC(Long,lar) DH</h3>
+    </div>
+} 
+}
+ 
+
