@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using couvre_plancher.Models;
 using couvre_plancher.Data;
+using Microsoft.EntityFrameworkCore;
 using System.Dynamic;
 
 namespace couvre_plancher.Controllers;
@@ -20,10 +21,11 @@ public class ClientController : Controller
     public IActionResult Index()
     {  HttpContext.Session.SetInt32("ademmander",0);
    
-        var couvre = _db.Couvreplancher.ToList();
-
+     var couvre = _db.Couvreplancher.ToList();
+  var promotion = _db.Promotion.Include(i=>i.id_couvre).ToList();
     ViewBag.couvre=couvre;
-        return View();
+   
+        return View(promotion);
     }
     
  

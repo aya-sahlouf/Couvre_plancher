@@ -1,7 +1,8 @@
 
 @{
-  var couvre = ViewBag.couvre as List<CouvreplancherModel>;
+var couvre = ViewBag.couvre as List<CouvreplancherModel>;
 }
+@model List<PromotionModel>;
 <div class=" p-5 container-fluid  text-center shadow-lg text-white" style=
 "background-image: url('images/home.jpg');background-size: cover;
     height: 70vh;">
@@ -11,13 +12,42 @@
         Votre comfort Notre Passion !
     </p>
 </div>
-<div class="container text-center mt-5 my-4">
+
+    <div class="container text-center mt-5 my-4">
     <h1 class="font-weight-light pb-3 col-t">Nos offres du moment</h1>
+
+    <div class="row mx-auto my-auto justify-content-center">
+        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                   
+                </div>
+                @foreach (var item in Model)
+                {
+                <div class="carousel-item ">
+                    <div class="col-md-4"> <a asp-action="Commande"  asp-route-id="@item.Id_pro" asp-controller="Client">
+                        <div class="card m-2">
+                           
+                            <div class="card-img"> <img
+                                    src="@item.id_couvre.image_couvre"
+                                    class=" p-0 w-100 " style="height: 250px;"> </div>
+                            <div class="card-img-overlay" style="color: black;">@item.evenement</div>
+                        </div></a>
+                    </div>
+                </div>
+                }
+            </div> <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
+                data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> </a> <a
+                class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"
+                data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> </a>
+        </div>
+    </div>
+</div>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div class="page-content page-container" id="page-content">
     <div class="padding">
-        <div class="row container d-flex justify-content-center">
-            
+        <div class="row container text-center d-flex justify-content-center">
+             <h1 class="font-weight-light pb-3 col-t">Nos Produits</h1>
         <div class="col-lg-12 col-xl-12">
                                                 <!-- Draggable Without Images card start -->
                                                 <div class="card">
