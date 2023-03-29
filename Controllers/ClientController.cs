@@ -31,7 +31,7 @@ public class ClientController : Controller
  
 
 [HttpGet]
- public IActionResult Commande (int lar, int Long ,int idcouvre)
+ public IActionResult Commande (int lar, int Long ,int idcouvre,int? id)
     {  HttpContext.Session.SetInt32("lar",lar);
      HttpContext.Session.SetInt32("long",Long);
    
@@ -48,7 +48,10 @@ foreach (var item in data)
   Console.WriteLine(item.Nom);  
 }
 
+
  ViewBag.data=data;}
+
+
 
         return View(couvre);
     }

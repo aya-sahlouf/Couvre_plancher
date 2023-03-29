@@ -31,7 +31,11 @@ var couvre = ViewBag.couvre as List<CouvreplancherModel>;
                             <div class="card-img"> <img
                                     src="@item.id_couvre.image_couvre"
                                     class=" p-0 w-100 " style="height: 250px;"> </div>
-                            <div class="card-img-overlay" style="color: black;">@item.evenement</div>
+                            <div class="card-img-overlay mt-5" style="color: black;"><h6>A l'occasion de l'événement <span style="color: red;"> @item.evenement</span></h6>
+                        
+                                <h6> Nous vouz offrons une Promotion du <span style="color: red;">-@item.reduction%</span> </h6>
+                            </div>
+                            
                         </div></a>
                     </div>
                 </div>
@@ -47,7 +51,7 @@ var couvre = ViewBag.couvre as List<CouvreplancherModel>;
 <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="row container text-center d-flex justify-content-center">
-             <h1 class="font-weight-light pb-3 col-t">Nos Produits</h1>
+             <h1 class="font-weight-light pb-3 col-t" id="prd">Nos Produits</h1>
         <div class="col-lg-12 col-xl-12">
                                                 <!-- Draggable Without Images card start -->
                                                 <div class="card">
