@@ -56,6 +56,14 @@ public class ClientController : Controller
    public IActionResult Client_info(ClientModel obj)
    { Console.WriteLine(obj.Cin);
     _db.Client.Add(obj);
+     _db.SaveChanges();
+     var id=_db.Client.OrderByDescending(p => p.Cin).FirstOrDefault();
+    CommandeModel cmd = new CommandeModel();
+    cmd.date_cmd=DateTime.Now;
+    cmd.id_client=id;
+     var id_couvre=_db.Couvreplancher.Where(p => p.Id_couvre== HttpContext.Session.GetInt32("idcouvre")).FirstOrDefault();
+    cmd.id_couvre=id_couvre;
+    _db.Commande.Add(cmd);
     _db.SaveChanges();
     return RedirectToAction("Index");
    }
