@@ -59,6 +59,9 @@
   </div>
   </div>
 </div>
+
+
+
 @if (@Context.Session.GetInt32("ademmander")==1)
 {
  @foreach (var item in fact)
@@ -76,8 +79,32 @@
         <p><b>Taxe sur coût des matériaux: </b> @item.CalculTaxeMateriaux(Long,lar)</p>
         <p><b>Taxe sur coût de la main d'ouevre: </b> @item.CalculTaxeMainOeuvre(Long,lar) </p>
         <h3 class="ms-5 me-5 shadow p-3 mb-5 bg-white rounded"><b>Le total taxes inclus: </b> @item.CalculTotalTTC(Long,lar) DH</h3>
-    </div>
+<button type="button" class="btn  btn-infos LoginBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Valider votre Commande
+</button>    </div>
 } 
 }
  
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Validation du commande</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> 
+          @using (Html.BeginForm("Client_info", "Client", FormMethod.Post)){
+      <div class="modal-body">
+ 
+    
+       <input type="text" class="form-control " name="nom" placeholder="Full Name">
+        <input type="text" class="form-control " name="adresse" placeholder="Adresse">
+         <input type="tel" class="form-control " name="num" placeholder="telephone">
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Valider</button>
+      </div>}
+    </div>
+          
+  </div>
+</div>

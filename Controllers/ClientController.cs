@@ -34,6 +34,7 @@ public class ClientController : Controller
  public IActionResult Commande (int lar, int Long ,int idcouvre,int? id)
     {  HttpContext.Session.SetInt32("lar",lar);
      HttpContext.Session.SetInt32("long",Long);
+     HttpContext.Session.SetInt32("idcouvre",idcouvre);
    
          var couvre = _db.Couvreplancher.ToList();
 
@@ -43,22 +44,21 @@ public class ClientController : Controller
         HttpContext.Session.SetInt32("ademmander",1);
        var data = _db.Couvreplancher.Where(s => s.Id_couvre == idcouvre).ToList();
 
-foreach (var item in data)
-{
-  Console.WriteLine(item.Nom);  
-}
 
 
  ViewBag.data=data;}
-
-
 
         return View(couvre);
     }
 
    
-
-   
+[HttpPost]
+   public IActionResult Client_info(ClientModel obj)
+   { Console.WriteLine(obj.Cin);
+    _db.Client.Add(obj);
+    _db.SaveChanges();
+    return RedirectToAction("Index");
+   }
 
  
     
