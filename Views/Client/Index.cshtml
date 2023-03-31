@@ -1,7 +1,8 @@
-@model IEnumerable<CouvreplancherModel>
-    
-<div class=" p-5 container-fluid  text-center shadow-lg text-white" style=
-"background-image: url('images/home.jpg');background-size: cover;
+@{
+    var couvre = ViewBag.couvre as List<CouvreplancherModel>;
+}
+@model List<PromotionModel>;
+<div class=" p-5 container-fluid  text-center shadow-lg text-white" style="background-image: url('images/home.jpg');background-size: cover;
     height: 70vh;">
     <h1 class="mb-3 h2 pt-5"> <i>Trouver votre plaisir chez nous</h1>
     </i>
@@ -9,120 +10,91 @@
         Votre comfort Notre Passion !
     </p>
 </div>
+
 <div class="container text-center mt-5 my-4">
     <h1 class="font-weight-light pb-3 col-t">Nos offres du moment</h1>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="row mx-auto my-auto justify-content-center">
+        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="carousel-item ">
+                        <div class="col-md-4"> <a asp-action="Commande" asp-route-id="@item.Id_pro" asp-controller="Client">
+                                <div class="card m-2">
+
+                                    <div class="card-img"> <img src="@item.id_couvre.image_couvre" class=" p-0 w-100 "
+                                            style="height: 250px;"> </div>
+                                    <div class="card-img-overlay mt-5" style="color: black;">
+                                        <h6>A l'occasion de l'événement <span style="color: red;"> @item.evenement</span>
+                                        </h6>
+
+                                        <h6> Nous vouz offrons une Promotion du <span
+                                                style="color: red;">-@item.reduction%</span> </h6>
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div> <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"
+                data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> </a> <a
+                class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"
+                data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> </a>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <div class="page-content page-container" id="page-content">
     <div class="padding">
-        <div class="row container d-flex justify-content-center">
-            
-        <div class="col-lg-12 col-xl-12">
-                                                <!-- Draggable Without Images card start -->
-                                                <div class="card">
-                                                   
-                                             
-                                                    <div class="card-block">
-                                                        <div class="row" id="sortable">
-                                                            
-                                                            @foreach (var item in Model)
-                                                            { <div class="col-md-4 m-b-20" draggable="false" style="">
-                                                                
-                                                                <div class="card-sub">
-                                                                    <img class="card-img-top " height="250px" src="@item.image_couvre" alt="Card image cap">
-                                                                    <div class="card-block h-25">
-                                                                        <h4 class="card-title">@item.Nom</h4>
-                                                                     
-                                                                    </div>
-                                                                </div>
-                                                               </div>
-                                                            }
-                                                           
-                                                          
-                                                            
-                                                           
-                                                           
-                                                           
-                                                       
-                                                           
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Draggable Without Images card end -->
-                                            </div>
-        
-            
+        <div class="row container text-center d-flex justify-content-center">
+            <h1 class="font-weight-light pb-3 col-t" id="prd">Nos Produits</h1>
+            <div class="col-lg-12 col-xl-12">
+                <!-- Draggable Without Images card start -->
+                <div class="card">
+
+
+                    <div class="card-block">
+                        <div class="row" id="sortable">
+
+                            @foreach (var item in couvre)
+                            {
+                                <div class="col-md-4 m-b-20" draggable="false" style="">
+
+                                    <div class="card-sub">
+                                        <img class="card-img-top " height="250px" src="@item.image_couvre"
+                                            alt="Card image cap">
+                                        <div class="card-block h-25">
+                                            <h4 class="card-title">@item.Nom</h4>
+
+                                        </div>
+                                        <div>
+                                          <a  asp-action="Commande" asp-controller="Client"> <button class="btn-center  LoginBtn mb-2">Commander</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Draggable Without Images card end -->
+            </div>
+
+
         </div>
-        </div>
-        </div>
-
-</div>
-<div class="container text-center mt-5 my-4">
-    <h1 class="font-weight-light pb-3 col-t">Passer votre commande</h1>
-
-<!--For all screen-->
-<div class="page">
-
-
-  <!--Login & Signup in single row-->
-  <div class="row">
-  
-    
-  <!--Column for signin-->
-    <div class="col-sm-8 text-center signin">
-  
-  
-      <!-- Default form login -->
-      @using (Html.BeginForm("Index", "Client", FormMethod.Get)){
-    <p class="h4 mb-4 text-center signintext top"><strong>Sign in to this Website</strong></p>
-  
-       
-  <select class="form-select form-control mb-2" name="Couvre">
-@foreach (var item in Model)
-{ <option value="@item.Id_couvre">@item.Nom</option>
-}
-   
-
-</select>
-  <div class="input-group" style="width: 80%;">
-     
-    <input type="number" class="form-control " name="lar" placeholder="Largeur">
-  <input type="number" class="form-control" name="Long" placeholder="Langueur" >
-       
-  </div>
-     
-     
-             
-        <button class="btn btn-info btn-block LoginBtn" name="ADemander" value="1" type="submit" >SIGN IN</button>
-  
-  
-  }
-  
     </div>
-  
-  <!--Column for signin-->
-    <div class="col-sm-4 signup text-center">
-      <h2 class="HelloFriend">Hello, Friend! </h2>
-      <h4 class="SignupText">Enter your personal details<br>and start journey with us</h4>
-
-  
-    </div>
-  </div>
-  </div>
 </div>
 
-@* @if(@Model.ADemander==1) {
-    <div class="ms-5 me-5 shadow p-3 mb-5 bg-white rounded">
-       
-        <hr />
-        <p> <b>Langueur: </b> @Model.Longueur pi <b>Largeur: </b> @Model.Largeur pi <b>superficie: @Model.Superficie </b> pi²</p>
-        <p><b>Type de couvre de plancher: @Model.Name</b> </p>
-        <h3>Facture: </h3>
-        <p><b>Coût des matériaux:</b> @Model.HTMateriaux </p>
-        <p><b>Coût de la main d'ouevre:</b> @Model.HTMainOeuvre</p>
-        <p><b>Le total Hors taxe: </b> @Model.Totalht </p>
-        <p><b>Taxe sur coût des matériaux: </b> @Model.TaxeMateriaux</p>
-        <p><b>Taxe sur coût de la main d'ouevre: </b> @Model.TaxeMainOeuvre </p>
-        <h3 class="ms-5 me-5 shadow p-3 mb-5 bg-white rounded"><b>Le total taxes inclus: </b> @Model.Totalttc DH</h3>
-    </div>
-
-} *@
+</div>
