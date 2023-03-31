@@ -2,15 +2,15 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using couvre_plancher.Models;
 using couvre_plancher.Data;
-
+using Microsoft.EntityFrameworkCore;
 namespace couvre_plancher.Controllers;
 
 public class SuperviseurController : Controller
 {
-    private readonly ILogger <SuperviseurController> _logger;
-     private readonly AplicationDbContext _db;
+    private readonly ILogger<SuperviseurController> _logger;
+    private readonly AplicationDbContext _db;
 
-     public SuperviseurController(ILogger<SuperviseurController> logger, AplicationDbContext db)
+    public SuperviseurController(ILogger<SuperviseurController> logger, AplicationDbContext db)
     {
         _logger = logger;
         _db = db;
@@ -18,7 +18,9 @@ public class SuperviseurController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        var packs = _db.Pack.Include(s => s.id_couvre).ToList();
+        IEnumerable<PackModel> pack = _db.Pack;
+        return View(pack);
     }
 
     public ActionResult login()
@@ -31,12 +33,13 @@ public class SuperviseurController : Controller
     public ActionResult login(string Email, string Password)
     {
         if (ModelState.IsValid)
-        {            var data = _db.Superviseur.Where(s => s.Email.Equals(Email) && s.Password.Equals(Password)).ToList();
+        {
+            var data = _db.Superviseur.Where(s => s.Email.Equals(Email) && s.Password.Equals(Password)).ToList();
             if (data.Count() > 0)
             {
                 HttpContext.Session.SetString("Email", data.FirstOrDefault().Email);
                 HttpContext.Session.SetInt32("id", data.FirstOrDefault().Id_sup);
-               
+
                 return RedirectToAction("Index");
             }
             else

@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.trash1_class:hover {
+    color: blueviolet !important;
+    background-color: beige;
+}
+
+.trash1_class {
+    padding: 0.3cm;
+    border-radius: 100%;
+}
+
+.close1_class:hover {
+    color: rgb(255, 28, 28) important;
+    background-color: beige;
+}
+
+.close1_class {
+    padding: 0.3cm;
+    border-radius: 100%;
+}
+
+.eye_class:hover {
+    color: rgba(101, 0, 196, 0.74) important;
+    background-color: rgb(218, 226, 228);
+}
+
+.eye_class {
+    padding: 0.3cm;
+    border-radius: 100%;
+    cursor: pointer;
+    color: #13005f;
+}
+
+.plus_1:hover {
+    color: rgba(101, 0, 196, 0.74) important;
+    background-color: rgb(218, 226, 228);
+}
+
+.plus_1 {
+    padding: 0.3cm;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+    color: #13005f;
+    overflow: hidden;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 2vw;
+    color: #ffd600;
+    cursor: pointer;
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important;
+}
+
+.rating>input:checked~label:before {
+    opacity: 1;
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4;
+}
+
+.butt_Add_P {
+    border: 2px solid #381a50;
+    background-color: #381a50;
+    border-radius: 0.9em;
+    transition: all ease-in-out 0.2s;
+    font-size: 14px;
+}
+
+.butt_Add_P span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.butt_Add_P:hover {
+    background-color: #4a3060;
+}
+
+.butt_Add_Psubmit {
+    border: 2px solid #381a50;
+    background-color: #381a50;
+    height: 1cm;
+    border-radius: 0.9em;
+    transition: All ease-in-out 0.2s;
+    font-size: 14px;
+}
+
+.butt_Add_Psubmit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.butt_Add_Psubmit:hover {
+    background-color: #613288;
+}
+
+.container_P {
+    margin: 30px 10px auto;
+    padding: 0;
+    background-color: white;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px #aaaaaa;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin: 0 5px;
+    height: 10px;
+    width: 100px;
+    max-width: 100%;
+}
+
+.progress {
+    background: #ad5389;
+    background: -webkit-linear-gradient(to bottom, #3c1053, #ad5389);
+    background: linear-gradient(to bottom, #3c1053, #ad5389);
+    border-radius: 3px;
+    height: 10px;
+    width: 0;
+    transition: width 0.5s ease-in;
+}
+
+.bg-blue {
+    background-color: #361a4e;
+    height: 4px;
+    margin-bottom: 10px;
+}
+
+.container_P img.pic {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #361a4e;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.textmuted {
+    font-size: 13px;
+    color: #8d8d8d;
+}
+
+.h-blue {
+    color: #361a4e;
+    font-size: 20px;
+}
+
+.p-blue {
+    color: #361a4e;
+    font-size: 16px;
+}
+
+.container_P .row .box button.fas {
+    border: 1px solid #ddd;
+    color: #5f5f5f;
+    font-size: 4px;
+}
+
+.container_P .row .box button {
+    margin-left: 3px;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.container_P .row .box button.fas:hover {
+    background-color: #ddd;
+}
+
+.px-9 {
+    padding: 0 30px;
+}
+
+.bg {
+    background-color: #ddd;
+    font-size: 5px;
+}
+
+.arrow .btn.btn-primary {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #ddd;
+    outline: none;
+    border: none;
+    color: rgb(87, 85, 85);
+}
+
+.arrow .btn.btn-primary:hover {
+    transform: translateX(15px);
+    transition: transform 0.8s ease;
+}
+
+.fas.fa-arrow-right {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide .btn.btn-primary {
+    background-color: transparent;
+    border: none;
+    padding: 5px 0;
+}
+
+.hide .btn.btn-primary:focus {
+    box-shadow: none;
+    outline: none;
+    color: #5eadee;
+}

@@ -8,45 +8,61 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = couvre_plancher
 build_property.RootNamespace = couvre_plancher
-build_property.ProjectDir = D:\couvre_plancher\
+build_property.ProjectDir = C:\Users\Asus\Desktop\Couvre_plancher\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\couvre_plancher
+build_property.MSBuildProjectDirectory = C:\Users\Asus\Desktop\Couvre_plancher
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/couvre_plancher/Views/Client/Index.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Client/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/couvre_plancher/Views/Client/Validation.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Client/Validation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFZhbGlkYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/couvre_plancher/Views/Shared/Error.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Client/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Client/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/couvre_plancher/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Shared/_Layout2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/couvre_plancher/Views/Superviseur/Index.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Superviseur/add_pack.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwZXJ2aXNldXJcYWRkX3BhY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Superviseur/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwZXJ2aXNldXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/couvre_plancher/Views/Superviseur/login.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Superviseur/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwZXJ2aXNldXJcbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/couvre_plancher/Views/_ViewImports.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/couvre_plancher/Views/_ViewStart.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/couvre_plancher/Views/Shared/_Layout.cshtml]
+[C:/Users/Asus/Desktop/Couvre_plancher/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-wafeo756zb

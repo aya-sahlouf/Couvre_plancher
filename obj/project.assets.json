@@ -3937,19 +3937,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\couvre_plancher\\couvre_plancher.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Couvre_plancher\\couvre_plancher.csproj",
       "projectName": "couvre_plancher",
-      "projectPath": "D:\\couvre_plancher\\couvre_plancher.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "D:\\couvre_plancher\\obj\\",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\Couvre_plancher\\couvre_plancher.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\Couvre_plancher\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -4013,7 +4013,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.407\\RuntimeIdentifierGraph.json"
       }
     }
   }
