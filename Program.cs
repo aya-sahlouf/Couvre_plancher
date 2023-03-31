@@ -47,7 +47,7 @@ app.UseEndpoints(endpoints =>
 
         endpoints.MapControllerRoute(
             name: "Superviseur",
-            pattern: "{controller=Superviseur}/{action=login}/{id?}");
+            pattern: "{controller=Superviseur}/{action=Dashboard}/{id?}");
     });
 
 app.Run();

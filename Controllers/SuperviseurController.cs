@@ -22,6 +22,20 @@ public class SuperviseurController : Controller
         IEnumerable<PackModel> pack = _db.Pack;
         return View(pack);
     }
+    public IActionResult Dashboard()
+    {
+        return View();
+    }
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Index(PackModel obj)
+    {
+
+        _db.Pack.Add(obj);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+
+    }
 
     public ActionResult login()
     {

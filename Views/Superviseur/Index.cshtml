@@ -30,40 +30,38 @@
                         @foreach (var item in Model)
                         {
 
-                                                                                                            <tr>
-                                                                                                                <td style="text-align: center;">
-                                                                                                                    <div class="d-flex align-items-center">
+                                                                                                                          <tr>
+                                                                                                                              <td style="text-align: center;">
+                                                                                                                                  <div class="d-flex align-items-center">
 
-                                                                                                                        <div class="ms-3">
-                                                                                                                            <p class="fw-bold mb-1">@item.superficie</p>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </td>
+                                                                                                                                      <div class="ms-3">
+                                                                                                                                          <p class="fw-bold mb-1">@item.superficie</p>
+                                                                                                                                      </div>
+                                                                                                                                  </div>
+                                                                                                                              </td>
 
-                                                                                                                <td style="text-align: center;">
-                                                                                                                    <span>-@item.reduction%</span>
-                                                                                                                </td>
-                                                                                                                    <td style="text-align: center;">
-                                                                                                                    <span>@item.id_couvre.Nom</span>
-                                                                                                                </td>
+                                                                                                                              <td style="text-align: center;">
+                                                                                                                                  <span>-@item.reduction%</span>
+                                                                                                                              </td>
+                                                                                                                                  <td style="text-align: center;">
+                                                                                                                                  <span>@item.id_couvre.Nom</span>
+                                                                                                                              </td>
 
-                                                                                                                <td style="text-align: center;">
-                                                                                                                    <div class="">
+                                                                                                                              <td style="text-align: center;">
+                                                                                                                                  <div class="">
                                         @item.CreatedAt
-                                                                                                                    </div>
-                                                                                                                </td>
-                                                                                                                <td style="text-align: center;">
-                                                                                                                    <div class="">
+                                                                                                                                  </div>
+                                                                                                                              </td>
+                                                                                                                              <td style="text-align: center;">
+                                                                                                                                  <div class="">
                                         @item.UpdatedAt
-                                                                                                                    </div>
-                                                                                                                </td>
-                                                                                                                <td class="d-flex justify-content-evenly align-items-center " style="height:3cm ;">
-                                                                                                                    <div class="">
-
-                                                                                                                    </div>
-                                                                                                                </td>
-
-                                                                                                            </tr>
+                                                                                                                                  </div>
+                                                                                                                              </td>
+                                                                                                                              <td class="d-flex justify-content-evenly align-items-center " style="height:3cm ;">
+                                                                                                                                  <div class="">
+                                                                                                                                  </div>
+                                                                                                                              </td>
+                                                                                                                          </tr>
                         }
 
                     </tbody>
@@ -78,38 +76,3 @@
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Pack</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">superficie</label>
-    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Saisir la superficie">
-  </div>
-    <div class="form-group">
-    <label for="exampleFormControlInput1">reduction</label>
-    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="saisir la reduction">
-  </div>
-    <div class="form-group">
-    <label for="exampleFormControlInput1">Nom_couvre</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Saisir le couvre">
-  </div>
-
-
-
-</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
