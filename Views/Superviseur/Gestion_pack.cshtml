@@ -141,9 +141,10 @@
                       </div>
                     
                   </td>
-                  <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> @item.id_couvre.Nom</span>
-                  </td>
+                @if (item.id_couvre != null)
+                      {
+                          <span class="text-xs font-weight-bold"> @item.id_couvre.Nom</span>
+                      }
                    <td class="align-middle text-center text-sm">
                     <span class="text-xs font-weight-bold"> @item.CreatedAt</span>
                   </td>
