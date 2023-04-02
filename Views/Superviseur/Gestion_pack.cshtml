@@ -1,0 +1,172 @@
+@model IEnumerable<PackModel>
+@{
+    ViewData["Title"] = "Display Pack Page";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+
+}
+
+@* <div class="d-flex " style="margin-top: 2cm;">
+<div class="col-md-7">
+<div class="card">
+<div class="d-flex justify-content-end">
+<i class="fa-solid fa-plus plus_1" data-toggle="modal" data-target="#exampleModal"></i>
+</div>
+<div class="card-body">
+
+```
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                    <tr>
+                        <th style="text-align: center;">superficie</th>
+                        <th style="text-align: center;">reduction </th>
+                        <th style="text-align: center;">Nom_couvre</th>
+                         <th style="text-align: center;">Crée en</th>
+                        <th style="text-align: center;">Modifié en</th>
+                        <th style="text-align: center;">Plus</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                                 <tr>
+                                <td style="text-align: center;">
+                                 <div class="d-flex align-items-center">
+                                    <div class="ms-3">
+                                  <p class="fw-bold mb-1">@item.superficie</p>
+                                          </div>
+                            </div>
+                                     </td>
+
+                                 <td style="text-align: center;">
+                                        <span>-@item.reduction%</span>
+                                        </td>
+                                           <td style="text-align: center;">
+                                         <span>@item.id_couvre.Nom</span>
+                                         </td>
+
+                                         <td style="text-align: center;">
+                                        <div class="">
+                                        @item.CreatedAt
+                                                </div>
+                                         </td>
+                                         <td style="text-align: center;">
+                                      <div class="">
+                                        @item.UpdatedAt
+                                      </div>
+                                    </td>
+                                     <td class="d-flex justify-content-evenly align-items-center " style="height:3cm ;">
+                                        <div class="">
+                                     </div>
+                                   </td>
+
+                               </tr>
+                        }
+
+                </tbody>
+            </table>
+        </div>
+        <!-- end card body -->
+    </div>
+    <!-- end card -->
+</div>
+
+</div>
+
+```
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">Add Pack</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">
+<form>
+<div class="form-group">
+<label for="exampleFormControlInput1">superficie</label>
+<input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Saisir la superficie">
+</div>
+<div class="form-group">
+<label for="exampleFormControlInput1">reduction</label>
+<input type="number" class="form-control" id="exampleFormControlInput1" placeholder="saisir la reduction">
+</div>
+<div class="form-group">
+<label for="exampleFormControlInput1">Nom_couvre</label>
+<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Saisir le couvre">
+</div>
+
+</form>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<button type="button" class="btn btn-primary">Save changes</button>
+</div>
+</div>
+</div>
+</div> *@
+<div class="table-responsive">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Superficie</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Reduction</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom_couvre</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Crée En</th>
+                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Modifier En</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+              </tr>
+              </thead>
+              <tbody>
+                 @foreach (var item in Model)
+                        {
+                <tr>
+                  <td>
+                  
+                      <div class=" justify-content-center text-center">
+                        <h6 class="text-xs font-weight-bold">@item.superficie</h6>
+                      </div>
+                       
+                  </td>
+                  <td>
+                     <div class=" justify-content-center text-center">
+                        <h6 class="text-xs font-weight-bold text-danger">-@item.reduction%
+                        </h6>
+                      </div>
+                    
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> @item.id_couvre.Nom</span>
+                  </td>
+                   <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> @item.CreatedAt</span>
+                  </td>
+                    <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> @item.UpdatedAt</span>
+                  </td>
+                    
+                    <td >
+                          <div class="d-flex justify-content-evenly align-items-center ">
+                    <a asp-controller="superviseur" asp-action="Edit_Pack" asp-route-id="@item.Id_pack">
+                      <i class="fas fa-edit " style="cursor: pointer; color:red"></i>
+                    </a>
+                    <a asp-controller="superviseur" asp-action="Delete_Pack" asp-route-id="@item.Id_pack">
+
+                      <i class="fa-solid fa-trash close1_class" style="cursor: pointer; color:red"></i>
+                    </a>
+
+                  </div>
+                  </td>
+                </tr>
+           
+                        }
+              </tbody>
+                 
+            </table>
+          </div>

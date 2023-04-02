@@ -1,0 +1,64 @@
+@model List<CouvreplancherModel>;
+<div class="table-responsive">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nom_Couvre</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Main oeuvre</th>
+                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Materiaux</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Crée En</th>
+                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Modifier En</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+              </tr>
+              </thead>
+              <tbody>
+                 @foreach (var item in Model)
+                        {
+                <tr>
+                  <td>
+                  
+                      <div class=" justify-content-center text-center">
+                      <img   class="rounded  w-30 h-30" src="~/@item.image_couvre"/>
+                      </div>
+                       
+                  </td>
+                  <td>
+                     <div class=" justify-content-center text-center">
+                        <h6 class="text-xs font-weight-bold">@item.Nom
+                        </h6>
+                      </div>
+                    
+                  </td>
+                  <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> @item.main_oeuvre</span>
+                  </td>
+                    <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> @item.materieaux</span>
+                  </td>
+                   <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> @item.CreatedAt</span>
+                  </td>
+                    <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> @item.UpdatedAt</span>
+                  </td>
+                    
+                    <td >
+                          <div class="d-flex justify-content-evenly align-items-center ">
+                    <a asp-controller="superviseur" asp-action="Edit_Pack" asp-route-id="@item.Id_couvre">
+                      <i class="fas fa-edit " style="cursor: pointer; color:red"></i>
+                    </a>
+                    <a asp-controller="superviseur" asp-action="Delete_Couvre" asp-route-id="@item.Id_couvre">
+
+                      <i class="fa-solid fa-trash close1_class" style="cursor: pointer; color:red"></i>
+                    </a>
+
+                  </div>
+                  </td>
+                </tr>
+           
+                        }
+              </tbody>
+                 
+            </table>
+          </div>
